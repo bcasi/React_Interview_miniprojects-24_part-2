@@ -17,7 +17,10 @@ function App() {
   ];
 
   const searchMeaning = () => {
-    if (search === "") return;
+    if (search === "") {
+      setDefinition("Word not found in the dictionary.");
+      return;
+    }
     const filterWord = wordAndMeaning.filter(
       (item) => item.word.toLowerCase() === search.toLocaleLowerCase()
     );
