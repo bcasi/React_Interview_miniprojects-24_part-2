@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [search, setSearch] = useState("");
+  const [definition, setDefinition] = useState("");
 
+  const wordAndMeaning = [
+    {
+      word: "React",
+      meaning: "A JavaScript library for building user interfaces.",
+    },
+
+    { word: "Component", meaning: "A reusable building block in React." },
+
+    { word: "State", meaning: "An object that stores data for a component." },
+  ];
+
+  const searchMeaning = () => {
+    if (search === "") return;
+    const filterWord = wordAndMeaning.filter(
+      (item) => item.word.toLowerCase() === search.toLocaleLowerCase()
+    );
+    if (filterWord.length > 0) {
+      let ans = filterWord[0].meaning;
+      setDefinition(ans);
+    } else {
+      setDefinition("Word not found in the dictionary");
+    }
+    return;
+  };
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="container">
+      <h1>Dictonary App</h1>
+
+      <div className="input_container">
+        <input
+          type="text"
+          placeholder="Search for a word"
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          value={search}
+        />
+        <button onClick={searchMeaning}>Search</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="definition_container">
+        Definition:
+        <span>{definition}</span>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
