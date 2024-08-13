@@ -32,7 +32,7 @@ const Form = () => {
     } else if (formData.phone?.length !== 10) {
       alert("Invalid phone number. Please enter a 10-digit phone number.");
     } else if (!dobValidation(formData.dob)) {
-      alert("Invalid date od birth. Date of birth cannot be in the future.");
+      alert("Invalid date of birth. Date of birth cannot be in the future.");
     } else {
       setFormData({ username: "", email: "", phone: "", dob: "" });
     }
