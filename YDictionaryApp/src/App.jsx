@@ -43,11 +43,11 @@ function App() {
           value={search}
         />
         <button onClick={searchMeaning}>Search</button>
+        <p className="definition_container">
+          Definition:
+          <span>{definition}</span>
+        </p>
       </div>
-      <p className="definition_container">
-        Definition:
-        <span>{definition}</span>
-      </p>
     </div>
   );
 }
