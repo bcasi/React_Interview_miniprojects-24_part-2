@@ -25,13 +25,13 @@ function App() {
       let ans = filterWord[0].meaning;
       setDefinition(ans);
     } else {
-      setDefinition("Word not found in the dictionary");
+      setDefinition("Word not found in the dictionary.");
     }
     return;
   };
   return (
     <div className="container">
-      <h1>Dictonary App</h1>
+      <h1>Dictionary App</h1>
 
       <div className="input_container">
         <input
