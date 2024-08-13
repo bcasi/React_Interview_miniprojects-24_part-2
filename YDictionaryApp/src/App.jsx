@@ -45,9 +45,7 @@ function App() {
         <button onClick={searchMeaning}>Search</button>
       </div>
       <p className="definition_container">Definition:</p>
-      <p>
-        <span>{definition}</span>
-      </p>
+      <p>{definition}</p>
     </div>
   );
 }
