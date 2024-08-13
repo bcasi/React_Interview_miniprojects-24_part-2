@@ -44,10 +44,10 @@ function App() {
         />
         <button onClick={searchMeaning}>Search</button>
       </div>
-      <div className="definition_container">
+      <p className="definition_container">
         Definition:
         <span>{definition}</span>
-      </div>
+      </p>
     </div>
   );
 }
