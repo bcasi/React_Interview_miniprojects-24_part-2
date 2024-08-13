@@ -1,0 +1,18 @@
+.input_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+input {
+  width: 350px;
+  height: 35px;
+  border-radius: 3px;
+  outline: none;
+  padding-left: 15px;
+  box-shadow: none;
+  border: 1px solid grey;
+  font-size: larger;
+}
